@@ -13,7 +13,7 @@ public class AthenaApplication {
 	@RequestMapping("/")
 	@ResponseBody
 	String home() {
-		return "Hello World!";
+		return "A WHole NEW Hello World!";
 
 	}
 
