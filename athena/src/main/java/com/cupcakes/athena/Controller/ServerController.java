@@ -33,12 +33,12 @@ public class ServerController {
         return new HelloWorldBean(String.format("Hello World, %s", name));
     }
 
-    @GetMapping("todos/{userName}")
+    @GetMapping("{userName}/todos/")
     public List<ToDo> getAllTodos(@PathVariable("userName") String userName){
         return todoService.findAll();
     }
 
-    @DeleteMapping("todos/{userName}/{id}")
+    @DeleteMapping("/{userName}/todos/{id}")
     public ResponseEntity<Void> deleteTodo(@PathVariable("userName") String userName,
                                            @PathVariable("id") long id ){
        ToDo todo = todoService.deleteById(id);
