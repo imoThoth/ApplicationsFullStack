@@ -3,12 +3,12 @@ package com.cupcakes.athena.Model;
 public class ToDo {
     private long id;
     private String userName;
-    private String desc;
+    private String description;
 
-    public ToDo(long id, String userName, String desc) {
+    public ToDo(long id, String userName, String description) {
         this.id = id;
         this.userName = userName;
-        this.desc = desc;
+        this.description = description;
     }
 
     public long getId() {
@@ -27,11 +27,11 @@ public class ToDo {
         this.userName = userName;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

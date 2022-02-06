@@ -11,9 +11,9 @@ public class ToDoService {
     private static int idCounter = 0;
 
     static {
-        todos.add(new ToDo(++idCounter, "in28minutes","Learn to Dance 2"));
-        todos.add(new ToDo(++idCounter, "in28minutes","Learn about Microservices 2"));
-        todos.add(new ToDo(++idCounter, "in28minutes","Learn about Angular"));
+        todos.add(new ToDo(++idCounter, "tosin","Learn to Dance 2"));
+        todos.add(new ToDo(++idCounter, "tosin","Learn about Microservices 2"));
+        todos.add(new ToDo(++idCounter, "tosin","Learn about Angular"));
     }
 
     public List<ToDo> findAll() {
