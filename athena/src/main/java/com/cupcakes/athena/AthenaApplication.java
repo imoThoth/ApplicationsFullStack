@@ -10,12 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @SpringBootApplication
 public class AthenaApplication {
 
-	@RequestMapping("/")
-	@ResponseBody
-	String home() {
-		return "A WHole NEW Hello World!";
-
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(AthenaApplication.class, args);
