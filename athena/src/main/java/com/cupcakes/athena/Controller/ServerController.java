@@ -4,6 +4,7 @@ import com.cupcakes.athena.Model.HelloWorldBean;
 import com.cupcakes.athena.Model.ToDo;
 import com.cupcakes.athena.Service.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,4 +37,16 @@ public class ServerController {
     public List<ToDo> getAllTodos(@PathVariable("userName") String userName){
         return todoService.findAll();
     }
+
+    @DeleteMapping("todos/{userName}/id")
+    public ResponseEntity<Void> deleteTodo(@PathVariable String userName,
+                                           @PathVariable long id ){
+       ToDo todo = todoService.deleteById(id);
+        if(todo !=null){
+            return  ResponseEntity.noContent().build();
+        }
+            return ResponseEntity.notFound().build();
+    }
+
+
 }
