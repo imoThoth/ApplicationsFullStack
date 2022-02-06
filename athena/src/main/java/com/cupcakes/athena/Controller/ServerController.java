@@ -1,12 +1,20 @@
 package com.cupcakes.athena.Controller;
 
 import com.cupcakes.athena.Model.HelloWorldBean;
+import com.cupcakes.athena.Model.ToDo;
+import com.cupcakes.athena.Service.ToDoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping()
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class ServerController {
+
+    @Autowired
+    private ToDoService todoService;
 
     @GetMapping(path = "/user")
     public String helloWorld(){
@@ -22,5 +30,10 @@ public class ServerController {
     @GetMapping(path = "/hello-world/path-variable/{name}")
     public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
         return new HelloWorldBean(String.format("Hello World, %s", name));
+    }
+
+    @GetMapping("todos/{userName}")
+    public List<ToDo> getAllTodos(@PathVariable("userName") String userName){
+        return todoService.findAll();
     }
 }
