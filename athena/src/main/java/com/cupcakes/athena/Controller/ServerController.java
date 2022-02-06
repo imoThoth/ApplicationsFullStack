@@ -3,7 +3,7 @@ package com.cupcakes.athena.Controller;
 import com.cupcakes.athena.Model.HelloWorldBean;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping(path = "database")
+@RequestMapping()
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class ServerController {
