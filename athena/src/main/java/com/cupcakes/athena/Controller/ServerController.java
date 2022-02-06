@@ -38,9 +38,9 @@ public class ServerController {
         return todoService.findAll();
     }
 
-    @DeleteMapping("todos/{userName}/id")
-    public ResponseEntity<Void> deleteTodo(@PathVariable String userName,
-                                           @PathVariable long id ){
+    @DeleteMapping("todos/{userName}/{id}")
+    public ResponseEntity<Void> deleteTodo(@PathVariable("userName") String userName,
+                                           @PathVariable("id") long id ){
        ToDo todo = todoService.deleteById(id);
         if(todo !=null){
             return  ResponseEntity.noContent().build();
