@@ -12,7 +12,7 @@ public class ToDoController {
     private ToDoService todoService;
 
     @GetMapping("/users/{userName}/todos")
-    public List<ToDo> getAllTodos(@PathVariable String username){
+    public List<ToDo> getAllTodos(@PathVariable("userName") String userName){
         return todoService.findAll();
     }
 }
