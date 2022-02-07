@@ -28,7 +28,7 @@ public class ServerController {
         return new HelloWorldBean(String.format("Hello World, %s", name));
     }
 
-    @GetMapping("{userName}/todos/")
+    @GetMapping("{userName}/todos/{id}")
     public ToDo getATodo(@PathVariable("userName") String userName,
                                @PathVariable("id") long id ){
 
