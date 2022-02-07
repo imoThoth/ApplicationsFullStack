@@ -20,6 +20,17 @@ public class ToDoService {
         return todos;
     }
 
+    public ToDo save(ToDo todo) {
+        if(todo.getId()==-1 || todo.getId()==0) {
+            todo.setId(++idCounter);
+            todos.add(todo);
+        } else {
+            deleteById(todo.getId());
+            todos.add(todo);
+        }
+        return todo;
+    }
+
     public ToDo deleteById(long id) {
         ToDo todo = findById(id);
         if(todo == null) return null;

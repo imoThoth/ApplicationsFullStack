@@ -7,6 +7,8 @@ public class ToDo {
     private String userName;
     private String description;
 
+    public ToDo(){}
+
     public ToDo(long id, String userName, String description) {
         this.id = id;
         this.userName = userName;
